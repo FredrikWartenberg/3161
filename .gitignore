@@ -41,3 +41,7 @@ vignettes/*.pdf
 
 # graphs
 graphs
+
+#html
+*.ico
+*.html
