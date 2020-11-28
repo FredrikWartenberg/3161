@@ -1,0 +1,4 @@
+Item;Unit;ScaleFactor;Description
+T_down;C;1;Heating Incoming Temperature
+T_up;C;1;Heating Outgoing Temperature
+Heating_pipes;-;-;Temperature Heating pipes Konsertvagen

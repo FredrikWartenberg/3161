@@ -1,0 +1,6 @@
+Item;Unit;ScaleFactor;Description
+Humidity;%RH / 10;1;Humidity in Cellar
+T_cellar;C;1;Cellar Temperature
+T_waterPipe;C;1;Waterpipe Temperature
+T_out2;C;1;Outside Temperature
+Cellar;-;-;Cellar Climate

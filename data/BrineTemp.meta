@@ -1,0 +1,4 @@
+Item;Unit;ScaleFactor;Description
+T_brine_in;C;1;Temp ingoing brine
+T_brine_out;C;1;Temp brine outgoing
+BrineTemp;-;-;Nomadic Temperature Measurement for Window temp

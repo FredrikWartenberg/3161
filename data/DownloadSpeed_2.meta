@@ -1,0 +1,3 @@
+Item;Unit;ScaleFactor;Description
+LargeFileDownload;kbit/sec;1;Download Speed 1 for Mbyte file
+DownloadSpeed_2;-;-;Internet download speed datacollector

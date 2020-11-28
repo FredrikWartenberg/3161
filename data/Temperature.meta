@@ -1,0 +1,5 @@
+Item;Unit;ScaleFactor;Description
+T_out;C;1;Outside Temperature
+T_kitchen;C;1;Kitchen Temperature
+T_livingroom;C;1;Living Room Temperature
+Temperature;-;-;Temperature Measurement Konsertvagen

@@ -1,0 +1,8 @@
+Item;Unit;ScaleFactor;Description
+LocalhostRT;mSec;1;Localhost roundtriptime
+RouterRT;mSec;1;Router roundtriptime
+AsusRT;mSec;1;Extension AP roundtriptime
+WANPingRT;mSec;1;WAN roundtriptime
+ArvidPingRT;mSec;1;Arvid roundtriptime
+AntminerRT;mSec;1;Antminer roundtriptime
+RT;-;-;Roundtrip times

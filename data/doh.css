@@ -1,0 +1,296 @@
+body {color:#000000;
+     background-color:#999999;
+     font-family: Arial;
+	text-align: left;
+	}
+
+/*<group=Links>*/
+
+a:link {
+    color: #dcdcdc }
+
+a:visited {
+    color: #332d45}
+
+a.nounder {
+	text-decoration : none;
+	text-align: center;
+}
+	
+/*</group>*/
+
+/*<group=Basic text>*/
+
+h1 {
+	text-align: center;
+	font: bold 32pt Arial;
+	color: #dcdcdc;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	margin: 0px;
+}
+
+h2 {
+	text-align: center;
+	font: bold 20pt Arial;
+	color: #dcdcdc;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	margin: 0px;
+	padding: 0px;
+}
+
+h3 {
+	text-align: center;
+	font: bold 18pt Arial;
+	color: #dcdcdc;
+	width: 640px;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+}
+
+h4 {
+	text-align: left;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	font-size: 11pt;
+	padding-top: 8px;
+	padding-bottom: 0px;
+	color: #e3e3e3;
+}
+
+p {
+	text-align: justify;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	font-size: 12px;
+}
+	
+/*</group>*/
+
+/*<group=captions>*/
+
+p.capidx {
+	text-align: center;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	font-size: 12px;
+	margin: auto;
+	overflow: visible;
+	width: 200px;
+}
+
+p.cap300 {
+	text-align: left;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	font-size: 12px;
+	width: 300px;
+	margin: auto;
+	overflow: visible;
+}
+
+p.cap240 {
+	text-align: left;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	font-size: 12px;
+	width: 240px;
+	margin: auto;
+	overflow: visible;
+}
+
+p.caption {
+	text-align: center;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	font-size: 12px;
+	margin: auto;
+}
+	
+/*</group>*/
+
+/*<group=Tables>*/
+
+td.idxcapt {
+	color: #dcdcdc;
+	text-align: center;
+	font: bold 11pt Arial;
+	text-decoration: none;
+}
+
+td.navigation {
+	background: #787878;
+	font-size: 12px;
+	float: inherit;
+}
+
+td.idxpic {
+	background: #666666;
+	margin: 10px;
+	padding: 10px;
+}
+
+td.idxcap {
+	background: #787878;
+	margin: 10px;
+	padding: 10px;
+	border-color: #888888;
+	border-width: 1px;
+}
+
+td.cell {
+	text-align: center;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	padding: 5px;
+	font-size: 12px;
+	vertical-align: top;
+}
+
+td.banner {
+	text-align: center;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	font-size: 12px;
+	vertical-align: top;
+	padding-bottom: 22px;
+}
+
+td.histcell {
+	text-align: left;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	padding: 0px;
+	font-size: 12px;
+	vertical-align: top;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+table.frontpage {
+	width: 480px;
+	border-width: 0px;
+	border-spacing: 0px;
+	background: #787878;
+	padding: 10px;
+	margin: auto;
+}
+
+table.page {
+	width: 640px;
+	border-width: 0px;
+	border-spacing: 0px;
+	background: #787878;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+table.mediapage {
+	width: 640px;
+	border-width: 0px;
+	border-spacing: 0px;
+	background: #787878;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+/*<group=trash>*/
+
+p.idxcapt {
+	text-align: center;
+	font: bold 11pt Arial;
+	color: #dcdcdc;
+	width: 160px;
+	background: #787878;
+	z-index: inherit;
+	height: 24px;
+	text-decoration: none;
+	border-width: 0px;
+}
+
+div.frontpage {
+	width: 480px;
+	padding: 10px;
+	background: #787878;
+	margin-right: auto;
+}
+
+p.cap320 {
+	text-align: left;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	font-size: 12px;
+	width: 320px;
+	margin: auto;
+	overflow: visible;
+}
+
+p.480 {
+	text-align: left;
+	background: #787878;
+	z-index: inherit;
+	width: 480px;
+	direction: ltr;
+	height: inherit;
+	font-size: 12px;
+}
+
+p.idxcaption {
+	text-align: center;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+	padding: 5px;
+	font-size: 12px;
+	width: 213px;
+}
+
+td.subtitle {
+	text-align: center;
+	width: 640px;
+	background: #787878;
+	z-index: inherit;
+	direction: ltr;
+	height: inherit;
+}
+
+body.idx {
+	width: 680px;
+	height: 800px;
+}
+	
+/*</group>*/
+	
+/*</group>*/
+
+
+
+
