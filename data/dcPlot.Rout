@@ -1,0 +1,176 @@
+
+R version 2.15.1 (2012-06-22) -- "Roasted Marshmallows"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: arm-unknown-linux-gnueabihf (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+[1] "Read .Rrofile"
+> # Process data from remote client for 
+> # subsequent analysis and plotting
+> 
+> # Input
+> #  remote client stored
+> #  in file given by command line argument + ".samples"
+> 
+> # Output
+> # a dataFrame named tsd
+> # with data which is
+> #  - time is converted into R object DatTimeClass
+> #  - data is cleaned (peaks due to direct sun exposure removed)
+> # the following fields are present
+> # - time:    	time of measurement
+> # - a set of measurements
+> 
+> ####################################################
+> # Obtain file name from command line assuming that 
+> # program is called like
+> # R CMD BATCH '--args DATACOLLECTOR_NAME' test.R
+> # 2012-03-03 Added PNG support for webpages
+> # 2012-03-17 Fixed a bug in date legend
+> 
+> # for test allow to run without command line args
+> # for test allow to run without command line args
+> if (is.na(commandArgs(trailingOnly = TRUE)[1])) {
++     dcName = "Temperature_test"
++ 	path = "/Volumes/home/Users/wartenbe/dev/remote/remoteAppl/R/"
++ 	outFile ="Temp_test"
++ 	endDate = "140228"
++ 	deltaTime = 864000
++ } else {
++ dcName 		= commandArgs(trailingOnly = TRUE)[1]
++ path 		= commandArgs(trailingOnly = TRUE)[2]
++ outFile 	= commandArgs(trailingOnly = TRUE)[3]
++ endDate 	= commandArgs(trailingOnly = TRUE)[4]
++ deltaTime 	= commandArgs(trailingOnly = TRUE)[5]
++ }
+> 
+> inFile   = paste(path,dcName,".samples",sep = "")
+> metaFile = paste(path,dcName,".meta",sep = "")
+> 
+> print(inFile)
+[1] "/home/pi/remote/3161/data/RT.samples"
+> print(endDate)
+[1] "150518"
+> print(deltaTime)
+[1] "86400"
+> 
+> #############################
+> # Prepare Meta Data
+> meta = read.table(metaFile,sep=";",header=TRUE,na.strings="-")
+> 
+> #############################
+> # Prepare Data
+> 
+> # readData into dataFrame
+> tsd = read.table(inFile,header=TRUE,na.strings = "nil")
+> 
+> # Remove superflous columns
+> tsd[1] <- NULL # datacollector name
+> tsd[1] <- NULL # n
+> 
+> # Sort and remove duplicates
+> tsd <- unique(tsd[order(tsd$Time), ])
+> 
+> # Code time to an R-internal time representation
+> tsd$Time <- as.POSIXct(strptime(tsd$Time,"%y%m%d-%H%M%S"))
+> 
+> 
+> ##############################
+> # Summary statistics
+> 
+> ##############################
+> # Plot function
+> 
+> displaySamples <- function(dataTab,meta,deltaTime=(3600*24*365))
++ 	{
++ 		lineCol = c("blue","green","red","brown","yellow","yellowgreen","tomato","pink","orange")
++ 		
++ 		# select time window
++ 		dataTab <- dataTab[which(dataTab$Time > max(dataTab$Time)-deltaTime),]
++ 		
++ 		# scale
++ 		for(i in 1:(ncol(dataTab)-1))
++ 		{
++ 			dataTab[[i]] <- dataTab[[i]]*meta[i,3]
++ 			#print(paste("Scaling",i,"with",meta[i,3]))
++ 		}
++ 		# set y scale
++ 		lowest  = floor(min(dataTab[1:(ncol(dataTab)-1)],na.rm=TRUE))
++ 		highest = ceiling(max(dataTab[1:(ncol(dataTab)-1)],na.rm=TRUE))
++ 	
++ 		# additional plot paramters
++ 		# add margin above top axis
++ 		par(mar=c(5.1, 4.1, 6.1, 2.1))
++ 
++ 		# plot
++ 		plot(as.POSIXct(format(dataTab$Time)),
++ 		dataTab[[1]],
++ 		main = paste("Plot of",meta[nrow(meta),4]),
++ 		xlab = paste("Time from", 
++ 					as.character(min(dataTab$Time),format = "%y%m%d"),
++ 					"to",
++ 					as.character(max(dataTab$Time),format = "%y%m%d")
++ 					), 
++ 		ylab = "Measured values",
++ 		type = "l",
++ 		col = lineCol[1],
++ 		ylim = c(lowest,highest),
++ 		lty = 1,
++ 		lwd = 4)
++ 		
++ 		
++ 		ntic = max(floor((highest-lowest)/10),1)
++ 		axis(4, at=seq(lowest, highest, by=ntic))
++ 		panel.frist = grid(col="black")
++ 		
++ 		lstrings = paste(as.character(meta[1,4])," [",as.character(meta[1,2]),"]",sep="")
++ 		
++ 		for(i in 2:(ncol(dataTab)-1))
++ 		{
++ 			lines(dataTab$Time,dataTab[[i]],col = lineCol[i],lwd=4,lty=i)
++ 			lstrings = c(lstrings,paste(as.character(meta[i,4])," [",as.character(meta[i,2]),"]",sep=""))
++ 		}
++ 		print(lstrings)
++ 		legend(dataTab$Time[1],highest, legend=lstrings,lty=1:(ncol(dataTab)-1),col=lineCol[1:(ncol(dataTab)-1)])
++ 		r <- as.POSIXct(round(range(dataTab$Time), "hours"))
++ 		if((r[2]-r[1]) <= 1)
++ 		{
++ 	   		print(r[2]-r[1])
++ 	   		axis.POSIXct(3, at=seq(r[1], r[2], by="hour"), format="%H")
++ 		}
++ }
+> 
+> print("Plotting (improved)")
+[1] "Plotting (improved)"
+> 
+> # Day
+> pngDayFile = paste(path,"graphs/", outFile, ".png",sep="")
+> png(file=pngDayFile,width = 1350, height = 450)
+> displaySamples(tsd,meta,as.numeric(deltaTime))
+[1] "Localhost roundtriptime [mSec]"    "Router roundtriptime [mSec]"      
+[3] "Extension AP roundtriptime [mSec]" "WAN roundtriptime [mSec]"         
+[5] "Arvid roundtriptime [mSec]"       
+Time difference of 1 days
+> dev.off()
+null device 
+          1 
+> 
+> proc.time()
+   user  system elapsed 
+ 12.390   0.590  13.528 
