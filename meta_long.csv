@@ -1,0 +1,23 @@
+dataCollector,channel,Description,Unit,ScaleFactor,n,n.na,max,highFence,median,lowFence,min,iqr,k
+RT,ArvidPingRT,Arvid roundtriptime,mSec,1,354057,272115,9513,10.04,2.21,-8.98,0.33,2.3775,4
+Cellar,Humidity,Humidity in Cellar,%RH / 10,1,212709,0,13.3,9.27,6.83,3.67,4.93,0.7,4
+DownloadSpeed,LargeFileDownload,Download Speed 1 for Mbyte file,kbit/sec,1,35822,0,11221,13034,10316,6754,370,785,4
+DownloadSpeed,LargeFileDownload,Download Speed 1 for Mbyte file,kbit/sec,1,159689,0,68039,151281,36801,-128703,279,34998,4
+DownloadSpeed_2,LargeFileDownload,Download Speed 1 for Mbyte file,kbit/sec,1,35822,0,11221,13034,10316,6754,370,785,4
+DownloadSpeed_2,LargeFileDownload,Download Speed 1 for Mbyte file,kbit/sec,1,159689,0,68039,151281,36801,-128703,279,34998,4
+RT,LocalhostRT,Localhost roundtriptime,mSec,1,354057,0,10.7,0.18,0.14,0.1,0.08,0.00999999999999998,4
+RT,RouterRT,Router roundtriptime,mSec,1,354057,15,79.5,1.48,0.63,-0.44,0.27,0.24,4
+DownloadSpeed,SmallFileDownload,Download Speed for 100 Kbyte file,kbit/sec,1,35822,3,6207,8659,5279,443,27,1027,4
+BrineTemp,T_brine_in,Temp ingoing brine,C,1,244557,0,127.94,37.14,5.44,-29.9,1.25,8.38,4
+BrineTemp,T_brine_out,Temp brine outgoing,C,1,244557,5,127.94,48.58,4.38,-44.46,-1.12,11.63,4
+Cellar,T_cellar,Cellar Temperature,C,1,212709,1,19.88,30.5,13.09,-9.74,5.75,5.03,4
+Heating_pipes,T_down,Heating Incoming Temperature,C,1,618636,0,57.31,89.69,31.88,-48.31,12.56,17.25,4
+Temperature,T_kitchen,Kitchen Temperature,C,1,624061,10,127.94,25.58,20.69,14.54,8.44,1.38,4
+Temperature,T_livingroom,Living Room Temperature,C,1,624061,93900,127.94,25.99,20.38,13.51,0,1.56,4
+Temperature,T_out,Outside Temperature,C,1,624061,0,127.94,45.42,7.81,-39.54,-17.31,10.62,4
+Cellar,T_out2,Outside Temperature,C,1,212709,22,33.81,45.92,8.5,-39.04,-17.25,10.62,4
+Heating_pipes,T_up,Heating Outgoing Temperature,C,1,618636,3,67.31,99.86,33.31,-57.1,11.19,19.62,4
+Cellar,T_waterPipe,Waterpipe Temperature,C,1,212709,23,18,32.67,10.5,-18.29,0.06,6.37,4
+Electric_Energy,Total_KWH,Total KWH Counter,kWH,1,245465,0,146310.26,335855.97,68108.56,-278497.47,87.93,76794.18,4
+RT,WANPingRT,WAN roundtriptime,mSec,1,354057,361,1922,10.09,7.47,4.09,6.47,0.75,4
+Electric_Power,WATT,Electric Power,kW,1,2514392,0,7816173.43,13.67,1.99,-12.33,-7877010.77,3.25,4
